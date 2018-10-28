@@ -37,6 +37,9 @@ COPY autoconfig.js /usr/lib64/firefox/defaults/pref/
 # install nano
 RUN yum install -y nano
 
+# set timezone
+RUN ln -fs /usr/share/zoneinfo/Australia/Melbourne /etc/localtime
+
 # switch to non-root user
 USER 1000
 
